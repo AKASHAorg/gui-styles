@@ -14,6 +14,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use('ecmascript');
   api.use('fourseven:scss@3.4.1');
+  api.use(['templating'], 'client');
   
   var assets = [
     'static/font/material-design-icons/Material-Design-Icons.eot',
@@ -71,6 +72,6 @@ Package.onUse(function(api) {
   ]
   api.addAssets(assets, 'client');
   api.addFiles(components, 'client', {isImport: true});
-  api.addFiles('static/sass/materialize.scss', 'client');
+  api.addFiles(['static/sass/materialize.scss', 'static/header.html'], 'client');
 });
 
