@@ -1,4 +1,5 @@
-const Icon = React.createClass({
+
+Icon = React.createClass({
   propTypes: {
     iconClass:    React.PropTypes.string.isRequired,
     packageClass: React.PropTypes.string,
@@ -15,9 +16,8 @@ const Icon = React.createClass({
   },
 
   render(){
-    const btnClass = `${this.props.packageClass} ${this.props.iconSize} ${this.props.position}`;
-    return <i className={btnClass}>{iconClass}</i>;
+    const btnClass = classNames(this.props.packageClass, this.props.iconSize, this.props.position);
+    return <i className={btnClass}>{this.props.iconClass}</i>;
   }
 
 });
-export default Icon

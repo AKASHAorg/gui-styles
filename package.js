@@ -10,10 +10,15 @@ Package.describe({
   documentation: 'README.md'
 });
 
+Npm.depends({
+  'classnames': '2.2.1'
+});
+
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use('ecmascript');
   api.use('fourseven:scss@3.4.1');
+  api.use('react');
   api.use(['templating'], 'client');
   
   var assets = [
@@ -70,6 +75,7 @@ Package.onUse(function(api) {
     'static/sass/components/_variables.scss',
     'static/sass/components/_waves.scss',
   ]
+
   api.addAssets(assets, 'client');
   api.addFiles(components, 'client', {isImport: true});
   api.addFiles(['static/sass/materialize.scss', 'static/header.html'], 'client');
